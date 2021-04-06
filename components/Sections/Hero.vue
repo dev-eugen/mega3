@@ -13,7 +13,7 @@
                     alt="Workflow"
                   />
                 </div>
-                <div class=" mt-4 bg-green-500 pl-8 pb-3 rounded-b-lg">
+                <div class="z-50 mt-4 bg-green-500 pl-8 pb-3 rounded-b-lg">
                   <ul class="mt-5 flex flex-col">
                     <li
                       class="flex justify-between items-center hover:bg-green-600  rounded-l-lg"
@@ -100,7 +100,7 @@
         </div>
       </nav>
     </div>
-    <div class="z-0">
+    <div>
       <div v-swiper="swiperOption">
         <div class="swiper-wrapper">
           <div class="swiper-slide">

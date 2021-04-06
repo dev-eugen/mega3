@@ -22,9 +22,9 @@
         alt="Company name">
        
         <div 
-        class="flex space-x-6"
+        class="flex justify-end  pr-16 space-x-6 w-screen   "
         >
-          <a href="#" class="text-white hover:text-white">
+          <a href="#" class="text-white hover:text-white   ">
             <span class="sr-only">Facebook</span>
 
             <svg 
@@ -90,9 +90,9 @@
           </a>
         </div>
       </div>
-      <div class="mt-12 grid grid-cols-2 gap-8 xl:mt-0 xl:col-span-2">
-        <div class="md:grid md:grid-cols-2 md:gap-8">
-          <div>
+     <div class="mt-12 grid grid-cols-2 gap-8 xl:mt-0 xl:col-span-2 ">
+        <div class="md:grid md:grid-cols-2 md:gap-8  ">
+          <div class="">
             <h3 class="text-sm font-semibold text-white tracking-wider uppercase">
               Navigation
             </h3>
@@ -186,35 +186,7 @@
            
             </ul>
           </div>
-          <div class="mt-12 md:mt-0">
-            <h3 class="text-sm font-semibold text-white tracking-wider uppercase">
-              Legal
-            </h3>
-            <ul class="mt-4 space-y-4">
-              <li>
-                <a href="#" class="text-base text-white hover:text-white-900">
-                  Claim
-                </a>
-              </li>
-
-              <li>
-                <a href="#" class="text-base text-white hover:text-white-900">
-                  Privacy
-                </a>
-              </li>
-
-              <li>
-                <a href="#" class="text-base text-white hover:text-white-900">
-                  Terms
-                </a>
-              </li>
-                <li>
-                <a href="#" class="text-base text-white hover:text-white-900">
-                  Terms
-                </a>
-              </li>
-            </ul>
-          </div>
+         
         </div>
       </div>
     </div>

@@ -1,4 +1,6 @@
 <template>
+<div>
+ 
 <footer class="bg-green-600 m-auto mt-80" aria-labelledby="footerHeading">
   <h2 id="footerHeading" class="sr-only">Footer</h2>
     <div 
@@ -191,6 +193,15 @@
    
   </div>
 </footer>
+ 
+</div>
 
   
 </template>
+
+
+<script>
+export default {};
+</script>
+
+<style></style>

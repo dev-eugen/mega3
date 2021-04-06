@@ -1,12 +1,19 @@
 <template>
   <div>
-    <AppBar />
+    <hero></hero>
     <Nuxt />
   </div>
 </template>
 
-<style>
-html {
-  @apply bg-gray-100;
+<script>
+export default {
+  components: {
+    Hero: () => import("@/components/Sections/Hero"),
+  }
 }
+</script>
+
+
+<style>
+
 </style>

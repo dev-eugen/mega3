@@ -1,6 +1,6 @@
 <template>
   <div>
-    <div class="relative bg-gray-100">
+    <div class=" bg-gray-100">
       <nav class="bg-green-600 shadow-lg">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div class="flex justify-between h-16">
@@ -100,29 +100,38 @@
         </div>
       </nav>
     </div>
-    <div class="strict">
-      <swiper class="swiper">
-        <swiper-slide>Slide 1</swiper-slide>
-        <swiper-slide>Slide 2</swiper-slide>
-        <swiper-slide>Slide 3</swiper-slide>
-        <swiper-slide>Slide 4</swiper-slide>
-        <swiper-slide>Slide 5</swiper-slide>
-        <swiper-slide>Slide 6</swiper-slide>
-        <swiper-slide>Slide 7</swiper-slide>
-        <swiper-slide>Slide 8</swiper-slide>
-        <swiper-slide>Slide 9</swiper-slide>
-        <swiper-slide>Slide 10</swiper-slide>
-      </swiper>
+    <div class="z-0">
+      <div v-swiper="swiperOption">
+        <div class="swiper-wrapper">
+          <div class="swiper-slide">
+            <img src="img/header_bg_main.jpg" alt="" srcset="" />
+          </div>
+          <div class="swiper-slide">
+            <img src="img/header_bg_main.jpg" alt="" srcset="" />
+          </div>
+          <div class="swiper-slide">
+            Sile1 Sile1 Sile1 Sile1
+          </div>
+        </div>
+      </div>
     </div>
   </div>
 </template>
 
 <script>
-import { Swiper, SwiperSlide } from "vue-awesome-swiper";
+import { Swiper, SwiperSlide, directive } from "vue-awesome-swiper";
 export default {
   components: {
     Swiper,
     SwiperSlide,
+  },
+  directives: {
+    swiper: directive,
+  },
+  data() {
+    return {
+      swiperOption: {},
+    };
   },
 };
 </script>

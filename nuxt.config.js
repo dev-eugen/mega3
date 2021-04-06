@@ -17,7 +17,7 @@ export default {
   css: ['swiper/css/swiper.css'],
 
   // Plugins to run before rendering page (https://go.nuxtjs.dev/config-plugins)
-   plugins: [{ src: './plugins/vue-awesome-swiper.js', ssr: true }],
+   plugins: [{ src: './plugins/vue-awesome-swiper.js', mode: 'client' }],
 
   // Auto import components (https://go.nuxtjs.dev/config-components)
   components: true,
@@ -36,6 +36,12 @@ export default {
 
   axios: {
     baseURL: 'https://api.mega3.uk/v1/'
+  },
+
+  server: {
+    port: 8080,
+    host: '127.0.0.1',
+    timing: false
   },
 
   // Build Configuration (https://go.nuxtjs.dev/config-build)

@@ -1,12 +1,13 @@
 <template>
   <div>
-    <hero></hero>
-    <footer></footer>
     <Nuxt />
-    <Footer />
-  </div>
-</template>
+    <hero></hero>
+   
+    <footer> <Footer /></footer>
 
+   
+  </div> 
+</template>
 <script>
 
 export default {

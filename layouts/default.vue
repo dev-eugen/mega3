@@ -16,6 +16,9 @@ export default {
 
 <style lang="postcss">
 html {
-  @apply font-sans font-bold;
+  @apply font-sans
+  
 }
+
+
 </style>

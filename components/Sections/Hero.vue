@@ -14,8 +14,36 @@
                   />
                 </div>
                 <div class="z-50 mt-4 bg-green-500 pl-8 pb-3 rounded-b-lg">
-                  <ul class="mt-5 flex flex-col">
+                  <div
+                    class="absolute shadow-xl overflow-y-auto rounded-md bg-white h-96  top-18 mt-3 z-10 ml-5 left-1/2 transform -translate-x-1/2 w-screen max-w-md sm:px-0 lg:max-w-3xl"
+                  >
+                    <div class="scr flex flex-wrap">
+                      <div
+                        class=" w-2/6 p-4 flex flex-col justify-start text-green-500"
+                        v-for="i in 7"
+                        :key="i"
+                      >
+                        <div class="flex flex-col">
+                          <h3 class="font-bold ">
+                            <nuxt-link class="hover:text-green-600" to="#"
+                              >Some header</nuxt-link
+                            >
+                          </h3>
+                          <nuxt-link
+                            class="hover:text-green-600"
+                            v-for="i in 7"
+                            :key="i"
+                            to="#"
+                            >Category name</nuxt-link
+                          >
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <ul class="mt-5 flex flex-col font-bold">
                     <li
+                      v-for="i in 10"
+                      :key="i"
                       class="flex justify-between items-center hover:bg-green-600  rounded-l-lg"
                     >
                       <a
@@ -40,6 +68,23 @@
                       </svg>
                     </li>
                   </ul>
+
+                  <div class="flex justify-center pr-8 my-2 ">
+                    <svg
+                      xmlns="http://www.w3.org/2000/svg"
+                      class="h-7 w-7 text-white hover:text-gray-300"
+                      fill="none"
+                      viewBox="0 0 24 24"
+                      stroke="currentColor"
+                    >
+                      <path
+                        stroke-linecap="round"
+                        stroke-linejoin="round"
+                        stroke-width="2"
+                        d="M8 12h.01M12 12h.01M16 12h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"
+                      />
+                    </svg>
+                  </div>
                 </div>
               </div>
             </div>
@@ -47,8 +92,6 @@
               <button
                 class="mr-2 p-1 rounded-full text-white hover:text-gray-300 hover:bg-green-700"
               >
-                <span class="sr-only">View notifications</span>
-                <!-- Heroicon name: outline/bell -->
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
                   class="h-7 w-7"
@@ -65,8 +108,6 @@
               <button
                 class="mr-2 p-1 rounded-full text-white hover:text-gray-300 hover:bg-green-700"
               >
-                <span class="sr-only">View notifications</span>
-                <!-- Heroicon name: outline/bell -->
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
                   class="h-7 w-7"
@@ -101,18 +142,13 @@
       </nav>
     </div>
     <div>
-      <div v-swiper="swiperOption">
+      <div class="swiper" v-swiper:myDirectiveSwiper="swiperOptions">
         <div class="swiper-wrapper">
-          <div class="swiper-slide">
+          <div class="swiper-slide" v-for="index in 6" :key="index">
             <img src="img/header_bg_main.jpg" alt="" srcset="" />
-          </div>
-          <div class="swiper-slide">
-            <img src="img/header_bg_main.jpg" alt="" srcset="" />
-          </div>
-          <div class="swiper-slide">
-            Sile1 Sile1 Sile1 Sile1
           </div>
         </div>
+        <div class="swiper-pagination swiper-pagination-bullets"  slot="pagination"></div>
       </div>
     </div>
   </div>
@@ -120,6 +156,7 @@
 
 <script>
 import { Swiper, SwiperSlide, directive } from "vue-awesome-swiper";
+import "swiper/css/swiper.css";
 export default {
   components: {
     Swiper,
@@ -130,10 +167,21 @@ export default {
   },
   data() {
     return {
-      swiperOption: {},
+      swiperOptions: {
+        loop: true,
+        centeredSlides: true,
+        pagination: {
+          el: ".swiper-pagination",
+          dynamicBullets: true,
+        },
+      },
     };
   },
 };
 </script>
 
-<style></style>
+<style lang="scss" scoped>
+.slider .slider-pagination-bullets{
+  background: violet;
+}
+</style>

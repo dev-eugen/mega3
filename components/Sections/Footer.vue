@@ -13,7 +13,7 @@
 
 
       <div 
-      class="space-y-8 xl:col-span-1 mt-4 w-auto"
+      class="space-y-8 xl:col-span-1 mt-4 w-auto flex justify-center"
       >
 
         <img 
@@ -22,11 +22,11 @@
         alt="Company name">
       
       </div>
-     <div class="mt-12 grid grid-cols-1 sm:grid sm:grid-cols-3 gap-8 xl:mt-0 xl:col-span-2 w-auto  ">
-        <div class="md:grid md:grid-cols-2 sm:grid sm:grid-cols-1 md:gap-8 w-auto  ">
+     <div class=" grid grid-cols-1 sm:grid sm:grid-cols-3 gap-8 xl:mt-0 xl:col-span-2 left-0  place-items-center md:space-x-24">
+        <div class=" md:grid md:grid-cols-3 sm:grid sm:grid-cols-1 md:gap-8 w-auto place-items-center md:space-x-24">
           <div class="w-auto">
             <h3 class="text-sm font-semibold text-white tracking-wider uppercase">
-              Navigation
+              Support
             </h3>
             <ul class="mt-4 space-y-4">
               <li>
@@ -37,19 +37,19 @@
 
               <li>
                 <a href="#" class="text-base text-white hover:text-white-900">
-                  Analytics
+                  About us
                 </a>
               </li>
 
               <li>
                 <a href="#" class="text-base text-white hover:text-white-900">
-                  Commerce
+                  About us
                 </a>
               </li>
 
               <li>
                 <a href="#" class="text-base text-white hover:text-white-900">
-                  Insights
+                  About us
                 </a>
               </li>
             </ul>
@@ -61,66 +61,68 @@
             <ul class="mt-4 space-y-4">
               <li>
                 <a href="#" class="text-base text-white hover:text-white-900">
-                  Pricing
+                  About us
                 </a>
               </li>
 
               <li>
                 <a href="#" class="text-base text-white hover:text-white-900">
-                  Documentation
+              About us
                 </a>
               </li>
 
               <li>
                 <a href="#" class="text-base text-white hover:text-white-900">
-                  Guides
+                  About us
+                  
                 </a>
               </li>
 
               <li>
                 <a href="#" class="text-base text-white hover:text-white-900">
-                  API Status
+                  About us
                 </a>
               </li>
             </ul>
           </div>
-        </div>
-        <div class="md:grid md:grid-cols-2 md:gap-8">
-          <div>
-            <h3 class="text-sm font-semibold text-white tracking-wider uppercase">
+       <div class="mt-12 md:mt-0 md:pl-24">
+            <h3 class="text-sm font-semibold text-white  uppercase ">
               Company
             </h3>
             <ul class="mt-4 space-y-4">
               <li>
                 <a href="#" class="text-base text-white hover:text-white-900">
-                  About
+                  About us
                 </a>
               </li>
 
               <li>
                 <a href="#" class="text-base text-white hover:text-white-900">
-                  Blog
+                  About us
                 </a>
               </li>
 
               <li>
                 <a href="#" class="text-base text-white hover:text-white-900">
-                  Jobs
+                  About us
                 </a>
               </li>
 
               <li>
                 <a href="#" class="text-base text-white hover:text-white-900">
-                  Press
+                  About us
                 </a>
               </li>
 
            
             </ul>
           </div>
+        </div>
+        <div class="md:grid md:grid-cols-2 md:gap-8">
+         
           
         <div 
-        class="flex  justify-center sm:justify-center space-x-6 ml-12 "
+        class="flex md:mb-24 space-x-6 md:pl-16 "
         >
           <a href="#" class="text-white hover:text-white   ">
             <span class="sr-only">Facebook</span>

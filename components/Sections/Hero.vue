@@ -13,53 +13,31 @@
                     alt="Workflow"
                   />
                 </div>
-                <div class="block mt-4 bg-green-500 px-8">
-                  <ul class="mt-5 space-y-6">
-                    <li class="flow-root">
+                <div class="z-50 mt-4 bg-green-500 pl-8 pb-3 rounded-b-lg">
+                  <ul class="mt-5 flex flex-col">
+                    <li
+                      class="flex justify-between items-center hover:bg-green-600  rounded-l-lg"
+                    >
                       <a
                         href="#"
-                        class="-m-3 p-3 flex items-center rounded-md text-base font-medium text-gray-900 hover:bg-green-600 transition ease-in-out duration-150"
+                        class="text-white p-1 ml-2 hover:text-gray-300 "
                       >
-                        <!-- Heroicon name: outline/information-circle -->
-                        <svg
-                          class="flex-shrink-0 h-6 w-6 text-gray-400"
-                          xmlns="http://www.w3.org/2000/svg"
-                          fill="none"
-                          viewBox="0 0 24 24"
-                          stroke="currentColor"
-                          aria-hidden="true"
-                        >
-                          <path
-                            stroke-linecap="round"
-                            stroke-linejoin="round"
-                            stroke-width="2"
-                            d="M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"
-                          />
-                        </svg>
-                        <span class="ml-4">About</span>
+                        Link
                       </a>
-                      <a
-                        href="#"
-                        class="-m-3 p-3 flex items-center rounded-md text-base font-medium text-gray-900 hover:bg-green-600 transition ease-in-out duration-150"
+                      <svg
+                        xmlns="http://www.w3.org/2000/svg"
+                        class="h-5 w-5 text-white flex order-last pr-2"
+                        fill="none"
+                        viewBox="0 0 24 24"
+                        stroke="currentColor"
                       >
-                        <!-- Heroicon name: outline/information-circle -->
-                        <svg
-                          class="flex-shrink-0 h-6 w-6 text-gray-400"
-                          xmlns="http://www.w3.org/2000/svg"
-                          fill="none"
-                          viewBox="0 0 24 24"
-                          stroke="currentColor"
-                          aria-hidden="true"
-                        >
-                          <path
-                            stroke-linecap="round"
-                            stroke-linejoin="round"
-                            stroke-width="2"
-                            d="M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"
-                          />
-                        </svg>
-                        <span class="ml-4">About</span>
-                      </a>
+                        <path
+                          stroke-linecap="round"
+                          stroke-linejoin="round"
+                          stroke-width="2"
+                          d="M9 5l7 7-7 7"
+                        />
+                      </svg>
                     </li>
                   </ul>
                 </div>
@@ -122,12 +100,40 @@
         </div>
       </nav>
     </div>
-    <div></div>
+    <div>
+      <div v-swiper="swiperOption">
+        <div class="swiper-wrapper">
+          <div class="swiper-slide">
+            <img src="img/header_bg_main.jpg" alt="" srcset="" />
+          </div>
+          <div class="swiper-slide">
+            <img src="img/header_bg_main.jpg" alt="" srcset="" />
+          </div>
+          <div class="swiper-slide">
+            Sile1 Sile1 Sile1 Sile1
+          </div>
+        </div>
+      </div>
+    </div>
   </div>
 </template>
 
 <script>
-export default {};
+import { Swiper, SwiperSlide, directive } from "vue-awesome-swiper";
+export default {
+  components: {
+    Swiper,
+    SwiperSlide,
+  },
+  directives: {
+    swiper: directive,
+  },
+  data() {
+    return {
+      swiperOption: {},
+    };
+  },
+};
 </script>
 
 <style></style>

@@ -4,11 +4,11 @@
 <footer class="bg-green-600 m-auto mt-80" aria-labelledby="footerHeading">
   <h2 id="footerHeading" class="sr-only">Footer</h2>
     <div 
-    class="max-w-7xl mx-auto py-12 px-4 sm:px-6 lg:py-16 lg:px-8"
+    class="max-w-8xl  py-12 px-4 sm:px-6 lg:py-16 lg:px-8 w-screen"
     >
 
     <div 
-    class="xl:grid xl:grid-cols-3 xl:gap-8"
+    class="xl:grid xl:grid-cols-3 xl:gap-4"
     >
 
 
@@ -22,7 +22,7 @@
         alt="Company name">
        
         <div 
-        class="flex justify-end  pr-16 space-x-6 w-screen   "
+        class="flex sm:justify-end justify-center space-x-6 w-auto   "
         >
           <a href="#" class="text-white hover:text-white   ">
             <span class="sr-only">Facebook</span>

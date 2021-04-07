@@ -13,7 +13,7 @@
 
 
       <div 
-      class="space-y-8 xl:col-span-1 mt-4 w-auto flex justify-center"
+      class="space-y-8 xl:col-span-1 mt-4 pb-6 w-auto flex justify-center"
       >
 
         <img 

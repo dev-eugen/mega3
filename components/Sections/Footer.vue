@@ -22,7 +22,7 @@
         alt="Company name">
        
         <div 
-        class="flex sm:justify-end justify-center space-x-6 w-auto   "
+        class="flex lg:justify-end justify-center space-x-6 w-screen   "
         >
           <a href="#" class="text-white hover:text-white   ">
             <span class="sr-only">Facebook</span>

@@ -1,11 +1,16 @@
 <template>
   <div>
-    <div class=" bg-gray-100">
+    <div class="bg-gray-100">
+      <!-- Navbar -->
       <nav class="bg-green-600 shadow-lg">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div class="flex justify-between h-16">
+        <!-- Element container of navbar -->
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 bg">
+          <!-- Central container of Element container -->
+          <div class="flex justify-between h-16 bg">
+            <!-- Logo block -->
             <div class="flex lg:bg-green-500">
               <div class="flex flex-col bg-green-500">
+                <!-- Img block -->
                 <div class="mt-4 flex-shrink-0 flex items-center px-8">
                   <img
                     class="block h-8 w-auto"
@@ -13,44 +18,22 @@
                     alt="Workflow"
                   />
                 </div>
-                <div class="z-50 mt-4 bg-green-500 pl-8 pb-3 rounded-b-lg">
-                  <div
-                    class="absolute shadow-xl overflow-y-auto rounded-md bg-white h-96  top-18 mt-3 z-10 ml-5 left-1/2 transform -translate-x-1/2 w-screen max-w-md sm:px-0 lg:max-w-3xl"
-                  >
-                    <div class="scr flex flex-wrap">
-                      <div
-                        class=" w-2/6 p-4 flex flex-col justify-start text-green-500"
-                        v-for="i in 7"
-                        :key="i"
-                      >
-                        <div class="flex flex-col">
-                          <h3 class="font-bold ">
-                            <nuxt-link class="hover:text-green-600" to="#"
-                              >Some header</nuxt-link
-                            >
-                          </h3>
-                          <nuxt-link
-                            class="hover:text-green-600"
-                            v-for="i in 7"
-                            :key="i"
-                            to="#"
-                            >Category name</nuxt-link
-                          >
-                        </div>
-                      </div>
-                    </div>
-                  </div>
+                <!-- Category list -->
+                <div class="z-50 mt-2 bg-green-500 pl-8 pb-3 rounded-b-lg">
                   <ul class="mt-5 flex flex-col font-bold">
+                    <!-- First root categories -->
                     <li
-                      v-for="i in 10"
+                      v-for="(indx, i) in root_categories"
                       :key="i"
                       class="flex justify-between items-center hover:bg-green-600  rounded-l-lg"
+                      @click="visible = !visible"
+                      v-show="i < 7 || !more_toggle"
                     >
                       <a
                         href="#"
                         class="text-white p-1 ml-2 hover:text-gray-300 "
                       >
-                        Link
+                        {{i}}
                       </a>
                       <svg
                         xmlns="http://www.w3.org/2000/svg"
@@ -68,9 +51,11 @@
                       </svg>
                     </li>
                   </ul>
-
-                  <div class="flex justify-center pr-8 my-2 ">
+                  <!-- Show or hide more categories -->
+                  <div class="flex justify-center pr-8 my-2">
                     <svg
+                      @click="more_toggle = !more_toggle;"
+                      v-if="more_toggle"
                       xmlns="http://www.w3.org/2000/svg"
                       class="h-7 w-7 text-white hover:text-gray-300"
                       fill="none"
@@ -84,10 +69,60 @@
                         d="M8 12h.01M12 12h.01M16 12h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"
                       />
                     </svg>
+                    <svg
+                    @click="more_toggle = !more_toggle"
+                      v-else
+                      xmlns="http://www.w3.org/2000/svg"
+                      class="h-7 w-7 text-white hover:text-gray-300"
+                      fill="none"
+                      viewBox="0 0 24 24"
+                      stroke="currentColor"
+                    >
+                      <path
+                        stroke-linecap="round"
+                        stroke-linejoin="round"
+                        stroke-width="2"
+                        d="M15 12H9m12 0a9 9 0 11-18 0 9 9 0 0118 0z"
+                      />
+                    </svg>
                   </div>
                 </div>
               </div>
             </div>
+            <!-- Category block -->
+            <transition
+              enter-active-class="opacity-0 -translate-x-full"
+              leave-active-class="opacity-0 -translate-x-full"
+            >
+              <div
+                v-show="visible"
+                class="transition duration-150 ease-in-out mt-1 relative shadow-xl overflow-y-auto rounded-lg bg-white h-96 z-10 top-16 left-1/3 transform -translate-x-1/2 w-screen max-w-md sm:px-0 lg:max-w-3xl"
+              >
+                <div class="scr flex flex-wrap">
+                  <div
+                    class=" w-2/6 p-4 flex flex-col justify-start text-green-500"
+                    v-for="i in 7"
+                    :key="i"
+                  >
+                    <div class="flex flex-col">
+                      <h3 class="font-bold ">
+                        <nuxt-link class="hover:text-green-700" to="#"
+                          >Some header</nuxt-link
+                        >
+                      </h3>
+                      <nuxt-link
+                        class="hover:text-green-700"
+                        v-for="i in 7"
+                        :key="i"
+                        to="#"
+                        >Category name</nuxt-link
+                      >
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </transition>
+            <!-- Icons list in end og navbar -->
             <div class="hidden sm:ml-6 sm:flex sm:items-center">
               <button
                 class="mr-2 p-1 rounded-full text-white hover:text-gray-300 hover:bg-green-700"
@@ -124,7 +159,6 @@
               <button
                 class="mr-2 p-1 rounded-full text-white hover:text-gray-300 hover:bg-green-700"
               >
-                <span class="sr-only">View notifications</span>
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
                   class="h-7 w-7"
@@ -141,6 +175,7 @@
         </div>
       </nav>
     </div>
+    <!-- Swiper-->
     <div>
       <div class="swiper" v-swiper:myDirectiveSwiper="swiperOptions">
         <div class="swiper-wrapper">
@@ -148,7 +183,11 @@
             <img src="img/header_bg_main.jpg" alt="" srcset="" />
           </div>
         </div>
-        <div class="swiper-pagination swiper-pagination-bullets"  slot="pagination"></div>
+        <!-- Swiper pagination -->
+        <div
+          class="swiper-pagination swiper-pagination-bullets"
+          slot="pagination"
+        ></div>
       </div>
     </div>
   </div>
@@ -167,6 +206,9 @@ export default {
   },
   data() {
     return {
+      more_toggle: true,
+      visible: false,
+      root_categories: 15,
       swiperOptions: {
         loop: true,
         centeredSlides: true,
@@ -181,7 +223,7 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-.slider .slider-pagination-bullets{
+.slider .slider-pagination-bullets {
   background: violet;
 }
 </style>

@@ -19,7 +19,7 @@
                   />
                 </div>
                 <!-- Category list -->
-                <div class="z-50 mt-2 bg-green-500 pl-8 pb-3 rounded-b-lg">
+                <div class="hidden lg:block z-50 mt-2 bg-green-500 pl-8 pb-3 rounded-b-lg">
                   <ul class="mt-5 flex flex-col font-bold">
                     <!-- First root categories -->
                     <li
@@ -33,7 +33,7 @@
                         href="#"
                         class="text-white p-1 ml-2 hover:text-gray-300 "
                       >
-                        {{i}}
+                        {{ i }}
                       </a>
                       <svg
                         xmlns="http://www.w3.org/2000/svg"
@@ -54,7 +54,7 @@
                   <!-- Show or hide more categories -->
                   <div class="flex justify-center pr-8 my-2">
                     <svg
-                      @click="more_toggle = !more_toggle;"
+                      @click="more_toggle = !more_toggle"
                       v-if="more_toggle"
                       xmlns="http://www.w3.org/2000/svg"
                       class="h-7 w-7 text-white hover:text-gray-300"
@@ -70,7 +70,7 @@
                       />
                     </svg>
                     <svg
-                    @click="more_toggle = !more_toggle"
+                      @click="more_toggle = !more_toggle"
                       v-else
                       xmlns="http://www.w3.org/2000/svg"
                       class="h-7 w-7 text-white hover:text-gray-300"
@@ -96,7 +96,7 @@
             >
               <div
                 v-show="visible"
-                class="transition duration-150 ease-in-out mt-1 relative shadow-xl overflow-y-auto rounded-lg bg-white h-96 z-10 top-16 left-1/3 transform -translate-x-1/2 w-screen max-w-md sm:px-0 lg:max-w-3xl"
+                class="transition duration-150 ease-in-out mt-1 absolute shadow-xl overflow-y-auto rounded-lg bg-white h-96 z-10 top-16 left-1/2 ml-24 transform -translate-x-1/2 w-screen max-w-md sm:px-0 lg:max-w-3xl"
               >
                 <div class="scr flex flex-wrap">
                   <div
@@ -122,8 +122,43 @@
                 </div>
               </div>
             </transition>
+            <!-- Search -->
+            <div class="mt-1 ml-2 flex items-center text-white w-4/12">
+              <input
+                type="text"
+                name="email"
+                id="email"
+                class="shadow-sm mr-1 focus:ring-green-500 focus:border-green-500 block w-full sm:text-sm border-green-300 rounded-3xl bg-green-500"
+                placeholder="Shoes, dress, hats"
+              />
+              <button
+                class="ml-1 p-1 rounded-full text-white hover:text-gray-300 hover:bg-green-700"
+              >
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  class="h-7 w-7"
+                  fill="none"
+                  viewBox="0 0 24 24"
+                  stroke="currentColor"
+                >
+                  <path
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    stroke-width="2"
+                    d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"
+                  />
+                </svg>
+              </button>
+              
+            </div>
             <!-- Icons list in end og navbar -->
             <div class="hidden sm:ml-6 sm:flex sm:items-center">
+              <button
+                type="button"
+                class="inline-flex mr-24 items-center px-4 py-2 border border-transparent text-sm font-medium rounded-3xl shadow-sm text-white bg-green-500 hover:bg-green-700 focus:outline-none focus:ring-2 focus:ring-green-500 w-6/12"
+              >
+                Start buisness
+              </button>
               <button
                 class="mr-2 p-1 rounded-full text-white hover:text-gray-300 hover:bg-green-700"
               >
@@ -222,8 +257,8 @@ export default {
 };
 </script>
 
-<style lang="scss" scoped>
-.slider .slider-pagination-bullets {
-  background: violet;
+<style lang="postcss" scoped>
+input::placeholder {
+  @apply text-white font-medium
 }
 </style>

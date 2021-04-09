@@ -2,14 +2,14 @@
   <div>
     <div class="bg-gray-100">
       <!-- Navbar -->
-      <nav class="bg-green-600 shadow-lg">
+      <nav class="bg-green-dark shadow-lg">
         <!-- Element container of navbar -->
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 bg">
           <!-- Central container of Element container -->
           <div class="flex justify-between h-16 bg">
             <!-- Logo block -->
-            <div class="flex lg:bg-green-500">
-              <div class="flex flex-col bg-green-500">
+            <div class="hidden lg:flex lg:bg-green-light">
+              <div class="flex flex-col bg-green-light">
                 <!-- Img block -->
                 <div class="mt-4 flex-shrink-0 flex items-center px-8">
                   <img
@@ -19,15 +19,17 @@
                   />
                 </div>
                 <!-- Category list -->
-                <div class="hidden lg:block z-50 mt-2 bg-green-500 pl-8 pb-3 rounded-b-lg">
+                <div
+                  class="hidden lg:block md:block  z-50 mt-2 bg-green-light pl-8 pb-3 rounded-b-lg"
+                >
                   <ul class="mt-5 flex flex-col font-bold">
                     <!-- First root categories -->
                     <li
                       v-for="(indx, i) in root_categories"
                       :key="i"
-                      class="flex justify-between items-center hover:bg-green-600  rounded-l-lg"
+                      class="flex justify-between items-center hover:bg-green-dark  rounded-l-lg"
                       @click="visible = !visible"
-                      v-show="i < 7 || !more_toggle"
+                      v-show="i < 0 || !more_toggle"
                     >
                       <a
                         href="#"
@@ -100,18 +102,18 @@
               >
                 <div class="scr flex flex-wrap">
                   <div
-                    class=" w-2/6 p-4 flex flex-col justify-start text-green-500"
+                    class=" w-2/6 p-4 flex flex-col justify-start text-green-light"
                     v-for="i in 7"
                     :key="i"
                   >
                     <div class="flex flex-col">
                       <h3 class="font-bold ">
-                        <nuxt-link class="hover:text-green-700" to="#"
+                        <nuxt-link class="hover:text-green-dark" to="#"
                           >Some header</nuxt-link
                         >
                       </h3>
                       <nuxt-link
-                        class="hover:text-green-700"
+                        class="hover:text-green-dark"
                         v-for="i in 7"
                         :key="i"
                         to="#"
@@ -123,16 +125,16 @@
               </div>
             </transition>
             <!-- Search -->
-            <div class="mt-1 ml-2 flex items-center text-white w-4/12">
+            <div class="mt-1 ml-2 flex items-center text-white" >
               <input
                 type="text"
                 name="email"
                 id="email"
-                class="shadow-sm mr-1  focus:ring-green-500 focus:border-green-500 block w-full sm:text-sm border-green-300 rounded-3xl bg-green-500"
+                class="shadow-sm mr-1 w-6/6 focus:ring-green-light focus:border-green-light block sm:text-sm border-green-300 rounded-3xl bg-green-light"
                 placeholder="Shoes, dress, hats"
               />
               <button
-                class="ml-1 p-1 rounded-full text-white hover:text-gray-300 hover:bg-green-700"
+                class="ml-1 p-1 rounded-full text-white hover:text-gray-300 hover:bg-green-dark"
               >
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
@@ -149,18 +151,33 @@
                   />
                 </svg>
               </button>
-              
+            </div>
+            <div class="lg:hidden mt-1 ml-2 flex items-center text-white ">
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                class="h-6 w-6"
+                fill="none"
+                viewBox="0 0 24 24"
+                stroke="currentColor"
+              >
+                <path
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  stroke-width="2"
+                  d="M4 6h16M4 12h16M4 18h16"
+                />
+              </svg>
             </div>
             <!-- Icons list in end og navbar -->
-            <div class="hidden sm:ml-6 sm:flex sm:items-center">
+            <div class="hidden lg:flex items-center">
               <button
                 type="button"
-                class="inline-flex mr-24 items-center px-4 py-2 border border-transparent text-sm font-medium rounded-3xl shadow-sm text-white bg-green-500 hover:bg-green-700 focus:outline-none focus:ring-2 focus:ring-green-500 w-6/12"
+                class="mr-3 px-4 py-2 border border-transparent text-sm font-medium rounded-3xl shadow-sm text-white bg-green-light hover:bg-green-dark focus:outline-none focus:ring-2 focus:ring-green-light"
               >
                 Start buisness
               </button>
               <button
-                class="mr-2 p-1 rounded-full text-white hover:text-gray-300 hover:bg-green-700"
+                class="mr-2 p-1 rounded-full text-white hover:text-gray-300 hover:bg-green-dark"
               >
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
@@ -176,7 +193,7 @@
                 </svg>
               </button>
               <button
-                class="mr-2 p-1 rounded-full text-white hover:text-gray-300 hover:bg-green-700"
+                class="mr-2 p-1 rounded-full text-white hover:text-gray-300 hover:bg-green-dark"
               >
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
@@ -192,7 +209,7 @@
                 </svg>
               </button>
               <button
-                class="mr-2 p-1 rounded-full text-white hover:text-gray-300 hover:bg-green-700"
+                class="mr-2 p-1 rounded-full text-white hover:text-gray-300 hover:bg-green-dark"
               >
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
@@ -259,10 +276,10 @@ export default {
 
 <style lang="postcss" scoped>
 input::placeholder {
-  @apply text-white font-medium ml-2 pl-2
+  @apply text-white font-medium ml-2 pl-2;
 }
 
 input {
-  @apply h-2/3
+  @apply h-2/3;
 }
 </style>

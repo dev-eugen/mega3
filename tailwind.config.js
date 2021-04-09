@@ -27,7 +27,10 @@ module.exports = {
         indigo: colors.indigo,
         red: colors.rose,
         yellow: colors.amber,
-        green: colors.emerald
+        green: {
+          light: '#50a237',
+          dark: '#248332',
+        }
 
       }
     }

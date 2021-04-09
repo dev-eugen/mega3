@@ -259,7 +259,7 @@ export default {
 
 <style lang="postcss" scoped>
 input::placeholder {
-  @apply text-white font-medium
+  @apply text-white font-medium ml-2
 }
 
 input {

@@ -128,7 +128,7 @@
                 type="text"
                 name="email"
                 id="email"
-                class="shadow-sm mr-1 focus:ring-green-500 focus:border-green-500 block w-full sm:text-sm border-green-300 rounded-3xl bg-green-500"
+                class="shadow-sm mr-1  focus:ring-green-500 focus:border-green-500 block w-full sm:text-sm border-green-300 rounded-3xl bg-green-500"
                 placeholder="Shoes, dress, hats"
               />
               <button
@@ -260,5 +260,9 @@ export default {
 <style lang="postcss" scoped>
 input::placeholder {
   @apply text-white font-medium
+}
+
+input {
+  @apply h-2/3
 }
 </style>

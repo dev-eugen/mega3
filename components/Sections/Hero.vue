@@ -1,6 +1,6 @@
 <template>
   <div>
-    <div class="bg-gray-100">
+    <div class="bg-green-light">
       <!-- Navbar -->
       <nav class="bg-green-dark shadow-lg">
         <!-- Element container of navbar -->
@@ -20,6 +20,7 @@
                 </div>
                 <!-- Category list -->
                 <div
+                  ref="categoryList"
                   class="hidden lg:block md:block  z-50 mt-2 bg-green-light pl-8 pb-3 rounded-b-lg"
                 >
                   <ul class="mt-5 flex flex-col font-bold">
@@ -72,7 +73,10 @@
                       />
                     </svg>
                     <svg
-                      @click="more_toggle = !more_toggle"
+                      @click="
+                        more_toggle = !more_toggle;
+                        visible = false;
+                      "
                       v-else
                       xmlns="http://www.w3.org/2000/svg"
                       class="h-7 w-7 text-white hover:text-gray-300"
@@ -93,27 +97,27 @@
             </div>
             <!-- Category block -->
             <transition
-              enter-active-class="opacity-0 -translate-x-full"
-              leave-active-class="opacity-0 -translate-x-full"
+              enter-active-class="opacity-0 translate-x-full"
+              leave-active-class="opacity-0 translate-x-full"
             >
               <div
+                class="transition duration-150 ease-in-out transform  absolute shadow-xl overflow-y-auto rounded-b-lg bg-green-dark h-96 z-10 w-screen max-w-4xl right-0 top-16"
                 v-show="visible"
-                class="transition duration-150 ease-in-out mt-1 absolute shadow-xl overflow-y-auto rounded-lg bg-white h-96 z-10 top-16 left-1/2 ml-24 transform -translate-x-1/2 w-screen max-w-md sm:px-0 lg:max-w-3xl"
               >
                 <div class="scr flex flex-wrap">
                   <div
-                    class=" w-2/6 p-4 flex flex-col justify-start text-green-light"
+                    class=" w-2/6 p-4 flex flex-col justify-start text-white"
                     v-for="i in 7"
                     :key="i"
                   >
                     <div class="flex flex-col">
                       <h3 class="font-bold ">
-                        <nuxt-link class="hover:text-green-dark" to="#"
+                        <nuxt-link class="hover:text-white" to="#"
                           >Some header</nuxt-link
                         >
                       </h3>
                       <nuxt-link
-                        class="hover:text-green-dark"
+                        class="hover:text-white"
                         v-for="i in 7"
                         :key="i"
                         to="#"
@@ -125,12 +129,12 @@
               </div>
             </transition>
             <!-- Search -->
-            <div class="mt-1 ml-2 flex items-center text-white" >
+            <div class="mt-1 ml-2 flex items-center lg:w-5/12 text-white">
               <input
                 type="text"
                 name="email"
                 id="email"
-                class="shadow-sm mr-1 w-6/6 focus:ring-green-light focus:border-green-light block sm:text-sm border-green-300 rounded-3xl bg-green-light"
+                class="shadow-sm mr-1 w-full focus:ring-green-light focus:border-green-light block sm:text-sm border-green-light rounded-3xl bg-green-light"
                 placeholder="Shoes, dress, hats"
               />
               <button
@@ -152,7 +156,11 @@
                 </svg>
               </button>
             </div>
-            <div class="lg:hidden mt-1 ml-2 flex items-center text-white ">
+            <!-- Menu -->
+            <div
+              @click="sidebar_visible = !sidebar_visible"
+              class="lg:hidden mt-1 ml-2 flex items-center text-white "
+            >
               <svg
                 xmlns="http://www.w3.org/2000/svg"
                 class="h-6 w-6"
@@ -172,12 +180,12 @@
             <div class="hidden lg:flex items-center">
               <button
                 type="button"
-                class="mr-3 px-4 py-2 border border-transparent text-sm font-medium rounded-3xl shadow-sm text-white bg-green-light hover:bg-green-dark focus:outline-none focus:ring-2 focus:ring-green-light"
+                class="mr-3 px-4 py-2 border-transparent text-sm font-medium rounded-3xl shadow-sm text-white bg-green-light hover:bg-green-dark hover:ring-12 hover:border-green-light border-2"
               >
                 Start buisness
               </button>
               <button
-                class="mr-2 p-1 rounded-full text-white hover:text-gray-300 hover:bg-green-dark"
+                class="mr-2 p-1 rounded-full text-white hover:text-gray-300 hover:bg-green-light"
               >
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
@@ -193,7 +201,7 @@
                 </svg>
               </button>
               <button
-                class="mr-2 p-1 rounded-full text-white hover:text-gray-300 hover:bg-green-dark"
+                class="mr-2 p-1 rounded-full text-white hover:text-gray-300 hover:bg-green-light"
               >
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
@@ -209,7 +217,7 @@
                 </svg>
               </button>
               <button
-                class="mr-2 p-1 rounded-full text-white hover:text-gray-300 hover:bg-green-dark"
+                class="mr-2 p-1 rounded-full text-white hover:text-gray-300 hover:bg-green-light"
               >
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
@@ -218,7 +226,9 @@
                   fill="currentColor"
                 >
                   <path
-                    d="M3 1a1 1 0 000 2h1.22l.305 1.222a.997.997 0 00.01.042l1.358 5.43-.893.892C3.74 11.846 4.632 14 6.414 14H15a1 1 0 000-2H6.414l1-1H14a1 1 0 00.894-.553l3-6A1 1 0 0017 3H6.28l-.31-1.243A1 1 0 005 1H3zM16 16.5a1.5 1.5 0 11-3 0 1.5 1.5 0 013 0zM6.5 18a1.5 1.5 0 100-3 1.5 1.5 0 000 3z"
+                    fill-rule="evenodd"
+                    d="M11.49 3.17c-.38-1.56-2.6-1.56-2.98 0a1.532 1.532 0 01-2.286.948c-1.372-.836-2.942.734-2.106 2.106.54.886.061 2.042-.947 2.287-1.561.379-1.561 2.6 0 2.978a1.532 1.532 0 01.947 2.287c-.836 1.372.734 2.942 2.106 2.106a1.532 1.532 0 012.287.947c.379 1.561 2.6 1.561 2.978 0a1.533 1.533 0 012.287-.947c1.372.836 2.942-.734 2.106-2.106a1.533 1.533 0 01.947-2.287c1.561-.379 1.561-2.6 0-2.978a1.532 1.532 0 01-.947-2.287c.836-1.372-.734-2.942-2.106-2.106a1.532 1.532 0 01-2.287-.947zM10 13a3 3 0 100-6 3 3 0 000 6z"
+                    clip-rule="evenodd"
                   />
                 </svg>
               </button>
@@ -227,12 +237,118 @@
         </div>
       </nav>
     </div>
+    <!-- Sidebar -->
+    <transition
+              enter-active-class="opacity-0 -translate-x-full"
+              leave-active-class="opacity-0 -translate-x-full"
+            >
+    <div
+      v-show="sidebar_visible"
+      class="transition duration-300 ease-in-out transform relative flex-col flex-grow border-r border-green-dark  pt-5 pb-4 bg-green-dark overflow-y-auto"
+    >
+      <div class="flex items-center justify-center px-4">
+        <img class="h-8 w-auto" src="/img/logo_header.png" alt="Workflow" />
+      </div>
+      <div class="mt-5 flex-grow flex flex-col">
+        <nav class="flex-1 px-2 bg-green-dark  space-y-1" aria-label="Sidebar">
+          <a
+            href="#"
+            class="text-white hover:bg-green-light hover:text-gray-100 group flex items-center px-2 py-2 text-sm font-medium rounded-md"
+          >
+            <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  class="h-7 w-7 mr-2"
+                  viewBox="0 0 20 20"
+                  fill="currentColor"
+                >
+                  <path
+                    fill-rule="evenodd"
+                    d="M10 9a3 3 0 100-6 3 3 0 000 6zm-7 9a7 7 0 1114 0H3z"
+                    clip-rule="evenodd"
+                  />
+                </svg>
+            Account
+
+            <span
+              class="bg-green-light group-hover:bg-green-dark ml-auto inline-block py-0.5 px-3 text-xs font-medium rounded-full"
+            >
+              5
+            </span>
+          </a>
+          <a
+            href="#"
+            class="text-white hover:bg-green-light hover:text-gray-100 group flex items-center px-2 py-2 text-sm font-medium rounded-md"
+          >
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              class="h-7 w-7 mr-2"
+              viewBox="0 0 20 20"
+              fill="currentColor"
+            >
+              <path
+                d="M3 1a1 1 0 000 2h1.22l.305 1.222a.997.997 0 00.01.042l1.358 5.43-.893.892C3.74 11.846 4.632 14 6.414 14H15a1 1 0 000-2H6.414l1-1H14a1 1 0 00.894-.553l3-6A1 1 0 0017 3H6.28l-.31-1.243A1 1 0 005 1H3zM16 16.5a1.5 1.5 0 11-3 0 1.5 1.5 0 013 0zM6.5 18a1.5 1.5 0 100-3 1.5 1.5 0 000 3z"
+              />
+            </svg>
+            Card
+
+            <span
+              class="bg-green-light group-hover:bg-green-dark ml-auto inline-block py-0.5 px-3 text-xs font-medium rounded-full"
+            >
+              1
+            </span>
+          </a>
+          <a
+            href="#"
+            class="text-white hover:bg-green-light hover:text-gray-100 group flex items-center px-2 py-2 text-sm font-medium rounded-md"
+          >
+            <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  class="h-7 w-7 mr-2"
+                  viewBox="0 0 20 20"
+                  fill="currentColor"
+                >
+                  <path
+                    fill-rule="evenodd"
+                    d="M11.49 3.17c-.38-1.56-2.6-1.56-2.98 0a1.532 1.532 0 01-2.286.948c-1.372-.836-2.942.734-2.106 2.106.54.886.061 2.042-.947 2.287-1.561.379-1.561 2.6 0 2.978a1.532 1.532 0 01.947 2.287c-.836 1.372.734 2.942 2.106 2.106a1.532 1.532 0 012.287.947c.379 1.561 2.6 1.561 2.978 0a1.533 1.533 0 012.287-.947c1.372.836 2.942-.734 2.106-2.106a1.533 1.533 0 01.947-2.287c1.561-.379 1.561-2.6 0-2.978a1.532 1.532 0 01-.947-2.287c.836-1.372-.734-2.942-2.106-2.106a1.532 1.532 0 01-2.287-.947zM10 13a3 3 0 100-6 3 3 0 000 6z"
+                    clip-rule="evenodd"
+                  />
+                </svg>
+            Setting
+
+            <span
+              class="bg-green-light group-hover:bg-green-dark ml-auto inline-block py-0.5 px-3 text-xs font-medium rounded-full"
+            >
+              2
+            </span>
+          </a>
+          <a
+            v-for="i in 6"
+            :key="i"
+            href="#"
+            class="text-white hover:bg-green-light hover:text-gray-100 group flex items-center px-2 py-2 text-sm font-medium rounded-md"
+          >
+          <svg xmlns="http://www.w3.org/2000/svg" class="h-7 w-7 mr-2" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 12l2-2m0 0l7-7 7 7M5 10v10a1 1 0 001 1h3m10-11l2 2m-2-2v10a1 1 0 01-1 1h-3m-6 0a1 1 0 001-1v-4a1 1 0 011-1h2a1 1 0 011 1v4a1 1 0 001 1m-6 0h6" />
+          </svg>
+            Title
+            <span
+              class="bg-green-light group-hover:bg-green-dark ml-auto inline-block py-0.5 px-3 text-xs font-medium rounded-full"
+            >
+              {{ i }}
+            </span>
+          </a>
+        </nav>
+      </div>
+    </div>
+    </transition>
     <!-- Swiper-->
     <div>
       <div class="swiper" v-swiper:myDirectiveSwiper="swiperOptions">
         <div class="swiper-wrapper">
           <div class="swiper-slide" v-for="index in 6" :key="index">
-            <img src="img/header_bg_main.jpg" alt="" srcset="" />
+            <div
+              style="background: url('img/header_bg_main.jpg'); background-position:center; top; no-repeat; height:650px"
+            ></div>
           </div>
         </div>
         <!-- Swiper pagination -->
@@ -256,8 +372,15 @@ export default {
   directives: {
     swiper: directive,
   },
+  computed: {
+    categoryListHeight() {
+      return this.$refs.categoryList.clientHeight;
+    },
+  },
   data() {
     return {
+      sidebar_visible: false,
+      load: false,
       more_toggle: true,
       visible: false,
       root_categories: 15,

@@ -2,7 +2,7 @@
   <div>
     <hero></hero>
     <Nuxt />
-    <Card />
+    <Card :rating="rating" @changeRating="changeRating" />
     <Footer/>
   </div>
 </template>
@@ -12,6 +12,16 @@ export default {
     Hero: () => import("@/components/Sections/Hero"),
     Footer: () => import("@/components/Sections/Footer"),
     Card: () => import("@/components/Sections/Card")
+  },
+  data() {
+    return {
+      rating: 3
+    }
+  },
+  methods: {
+    changeRating(i) {
+      this.rating = i
+    }
   },
 };
 </script>

@@ -133,6 +133,7 @@
               <input
                 type="text"
                 name="email"
+                v-model="input_value"
                 id="email"
                 class="shadow-sm mr-1 w-full focus:ring-green-light focus:border-green-light block sm:text-sm border-green-light rounded-3xl bg-green-light"
                 placeholder="Shoes, dress, hats"
@@ -379,6 +380,7 @@ export default {
   },
   data() {
     return {
+      input_value: '',
       sidebar_visible: false,
       load: false,
       more_toggle: true,

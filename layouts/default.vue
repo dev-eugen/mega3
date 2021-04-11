@@ -2,7 +2,7 @@
   <div>
     <hero></hero>
     <Nuxt />
-    <Card :rating="rating" @changeRating="changeRating" />
+    <Card :rating="rating" @changeRating="changeRating" crd-text="Versus"/>
     <Footer/>
   </div>
 </template>
@@ -15,7 +15,8 @@ export default {
   },
   data() {
     return {
-      rating: 3
+      rating: 3,
+      
     }
   },
   methods: {

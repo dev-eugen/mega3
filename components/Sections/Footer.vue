@@ -2,7 +2,7 @@
 <div>
  
 
-<footer class="bg-green-600 m-auto mt-80" aria-labelledby="footerHeading"> <!--Footer-->
+<footer class="bg-green-dark m-auto mt-80" aria-labelledby="footerHeading"> <!--Footer-->
   <h2 id="footerHeading" class="sr-only">Footer</h2>
     <div 
      class="max-w-8xl  py-12 px-4 sm:px-6 lg:py-16 lg:px-8 w-auto" 

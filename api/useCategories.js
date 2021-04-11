@@ -12,6 +12,8 @@ export default function useCategories() {
         element.parent_id == 0 ? rootNames.value.push(element.name) : null
     })
 
+    const blocks = ssrRef([])
+
 
   return { rootNames }
 }

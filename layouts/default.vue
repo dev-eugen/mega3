@@ -18,7 +18,7 @@ export default {
   components: {
     Hero: () => import("@/components/Sections/Hero"),
     Footer: () => import("@/components/Sections/Footer"),
-    Card: () => import("@/components/Sections/Card")
+    Card: () => import("@/components/cardProduct")
   },
   data() {
     return {

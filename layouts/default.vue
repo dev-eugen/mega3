@@ -1,6 +1,6 @@
 <template>
   <div>
-    <hero></hero>
+    <hero :rootNames="rootNames" ></hero> 
     <Nuxt />
     <Card 
     :rating="rating" 
@@ -14,24 +14,28 @@
   </div>
 </template>
 <script>
-export default {
+import { ssrRef , defineComponent} from '@nuxtjs/composition-api'
+import useCategories from "@/api/useCategories"
+export default defineComponent({
   components: {
     Hero: () => import("@/components/Sections/Hero"),
     Footer: () => import("@/components/Sections/Footer"),
     Card: () => import("@/components/ProductCard")
   },
-  data() {
-    return {
-      rating: 3,
-      
+  setup(props) {
+    const rating = ssrRef(2)
+
+    const changeRating = (i) => {
+      rating.value = i
     }
-  },
-  methods: {
-    changeRating(i) {
-      this.rating = i
+
+    return{
+      rating,
+      changeRating,
+      ...useCategories()
     }
-  },
-};
+  }
+})
 </script>
 
 <style lang="postcss">

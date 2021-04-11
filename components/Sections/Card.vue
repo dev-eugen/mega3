@@ -32,15 +32,15 @@
       </div>
 
       <div class="flex justify-center text-green-dark mt-2">
-        <p>Srping Collection</p>
+        <p>{{clnText}}</p>
       </div>
       <div class="text-green-dark flex justify-center">
-        <p class="font-bold">Evening Dress</p>
+        <p class="font-bold">{{drsText}}</p>
       </div>
       <div class="flex flex-row items-center h-16">
         <div class="flex justify-center w-1/2 ">
-        <h1 class="text-red-600 font-bold  text-2xl">250$</h1>
-        <h1 class="text-gray-500 line-through mt-2 ml-1">250$</h1>
+        <h1 class="text-red-600 font-bold  text-2xl">{{prcText}}</h1>
+        <h1 class="text-gray-500 line-through mt-2 ml-1">{{prcText}}</h1>
         </div>
         <div class="flex justify-end w-1/2">
         <button
@@ -67,12 +67,26 @@
 
 <script>
 export default {
-  props:['crdText'],
+  
   props: {
     rating: {
       type: Number,
       default: 0
     },
+    crdText: {
+      type: String,
+      
+    },
+    clnText:{
+      type: String,
+    },
+
+    drsText:{
+      type: String,
+    },
+    prcText:{
+      type: String,
+    }
    
   },
 };

@@ -2,7 +2,14 @@
   <div>
     <hero></hero>
     <Nuxt />
-    <Card :rating="rating" @changeRating="changeRating" crd-text="Versus"/>
+    <Card 
+    :rating="rating" 
+    @changeRating="changeRating" 
+    crd-text="Versus" 
+    cln-text="Spring Colection"
+    drs-text="Evening Dress"
+    prc-text="250$"
+    />
     <Footer/>
   </div>
 </template>

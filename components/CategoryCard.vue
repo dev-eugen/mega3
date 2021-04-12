@@ -12,6 +12,7 @@
 </template>
 
 <script>
+import { ref , defineComponent, reactive } from '@nuxtjs/composition-api'
 export default defineComponent({
     setup () {
         

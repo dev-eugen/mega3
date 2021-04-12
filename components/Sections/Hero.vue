@@ -354,7 +354,7 @@
       </div>
     </transition>
     <!-- Swiper-->
-    <div>
+    <!-- <div>
       <div class="swiper" v-swiper:myDirectiveSwiper="swiperOptions">
         <div class="swiper-wrapper">
           <div class="swiper-slide" v-for="index in 6" :key="index">
@@ -364,13 +364,12 @@
             ></div>
           </div>
         </div>
-        <!-- Swiper pagination -->
         <div
           class="swiper-pagination swiper-pagination-bullets"
           slot="pagination"
         ></div>
       </div>
-    </div>
+    </div> -->
   </div>
 </template>
 

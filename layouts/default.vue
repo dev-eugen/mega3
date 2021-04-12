@@ -41,8 +41,5 @@ export default defineComponent({
 <style lang="postcss">
 html {
   @apply font-sans
-  
 }
-
-
 </style>

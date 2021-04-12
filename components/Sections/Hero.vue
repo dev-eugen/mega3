@@ -1,6 +1,6 @@
 <template>
-  <div>
-    <div class="bg-green-light">
+  <div class="bg-green-dark">
+    <div >
       <!-- Navbar -->
       <nav class="bg-green-dark shadow-lg">
         <!-- Element container of navbar -->
@@ -53,7 +53,7 @@
             <!-- Menu -->
             <div
               @click="sidebar_visible = !sidebar_visible"
-              class="lg:hidden mt-1 ml-2 flex items-center text-white "
+              class="lg:hidden mt-1 ml-2 mr-2 flex items-center text-white "
             >
               <svg
                 xmlns="http://www.w3.org/2000/svg"
@@ -135,7 +135,7 @@
         class="hidden lg:flex md:flex z-50 flex-col justify-center bg-green-light rounded-br-lg w-3/12 "
       >
         <div class="overflow-x-auto h-auto ">
-          <ul class="flex flex-col font-bold max-h-96">
+          <ul class="flex flex-col font-bold" style="max-height: 650px">
             <li
               v-for="(name, i) in rootNames"
               :key="i"
@@ -207,7 +207,7 @@
       <!-- Category block -->
       <transition enter-active-class="opacity-0" leave-active-class="opacity-0">
         <div
-          class="h-96 transition duration-150 ease-in-out transform  shadow-xl overflow-y-auto bg-white z-10 w-9/12"
+          class="h-max transition duration-150 ease-in-out transform  shadow-xl overflow-y-auto bg-white z-10 w-9/12"
           v-show="visible"
         >
           <div class="scr flex flex-wrap">
@@ -242,7 +242,7 @@
     >
       <div
         v-show="sidebar_visible"
-        class="transition duration-300 ease-in-out transform relative flex-col flex-grow border-r border-green-dark  pt-5 pb-4 bg-green-dark overflow-y-auto"
+        class="w-screen transition duration-150 ease-in-out z-10 absolute transform flex-col flex-grow border-r border-green-dark  pt-5 pb-4 bg-green-dark overflow-y-auto"
       >
         <div class="flex items-center justify-center px-4">
           <img class="h-8 w-auto" src="/img/logo_header.png" alt="Workflow" />
@@ -323,8 +323,8 @@
               </span>
             </a>
             <a
-              v-for="i in 6"
-              :key="i"
+              v-for="name in rootNames"
+              :key="name"
               href="#"
               class="text-white hover:bg-green-light hover:text-gray-100 group flex items-center px-2 py-2 text-sm font-medium rounded-md"
             >
@@ -342,12 +342,7 @@
                   d="M3 12l2-2m0 0l7-7 7 7M5 10v10a1 1 0 001 1h3m10-11l2 2m-2-2v10a1 1 0 01-1 1h-3m-6 0a1 1 0 001-1v-4a1 1 0 011-1h2a1 1 0 011 1v4a1 1 0 001 1m-6 0h6"
                 />
               </svg>
-              Title
-              <span
-                class="bg-green-light group-hover:bg-green-dark ml-auto inline-block py-0.5 px-3 text-xs font-medium rounded-full"
-              >
-                {{ i }}
-              </span>
+              {{ name }}
             </a>
           </nav>
         </div>

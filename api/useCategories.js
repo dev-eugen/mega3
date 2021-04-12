@@ -3,6 +3,7 @@ import { useStore, ssrRef } from "@nuxtjs/composition-api"
 export default function useCategories() {
   // import
   const categories = useStore().state.categories.categories
+  const rootNames = useStore().state.categories.rootNames
 
   // std methods
 
@@ -13,12 +14,6 @@ export default function useCategories() {
   const filterByParent_Id = (id) => {
     return categories.filter((e) => e.parent_id == id)
   }
-
-  
-  const rootNames = ssrRef([])
-  categories.forEach((element) => {
-    element.parent_id == 0 ? rootNames.value.push(element.name) : null
-  })
 
   
 

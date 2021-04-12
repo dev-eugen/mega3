@@ -1,3 +1,8 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+/* 
+::root{
+    var(--swiper-pagination-color, var(--swiper-theme-color))
+} */

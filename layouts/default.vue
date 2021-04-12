@@ -10,6 +10,8 @@
     drs-text="Evening Dress"
     prc-text="250$"
     />
+    <CategoryCard/>
+    <Swiper/>
     <Footer/>
   </div>
 </template>
@@ -20,7 +22,9 @@ export default defineComponent({
   components: {
     Hero: () => import("@/components/Sections/Hero"),
     Footer: () => import("@/components/Sections/Footer"),
-    Card: () => import("@/components/ProductCard")
+    Card: () => import("@/components/ProductCard"),
+    CategoryCard: () => import("@/components/CategoryCard"),
+    Swiper: () => import("@/components/Swiper")
   },
   setup(props) {
     const rating = ssrRef(2)

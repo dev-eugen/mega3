@@ -410,4 +410,31 @@ input::placeholder {
 input {
   @apply h-2/3;
 }
+
+.swiper .swiper-pagination-bullet{
+    margin: 5px!important;
+    display: block;
+    background: #107D6A;
+    opacity: 1;
+    width: 10px;
+    height: 10px;
+}
+.swiper .swiper-pagination-bullet-active{
+    position: relative;
+    width: 26px;
+    height: 26px;
+    border: 1px solid #107D6A;
+    background: none;
+}
+.swiper .swiper-pagination-bullet-active:after{
+    position: absolute;
+    content: "";
+    width: 10px;
+    height: 10px;
+    display: block;
+    border-radius: 50%;
+    top: 7px;
+    left: 7px;
+    background: #107D6A;
+}
 </style>

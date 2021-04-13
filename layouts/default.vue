@@ -10,7 +10,7 @@
     drs-text="Evening Dress"
     prc-text="250$"
     />
-    <CategoryCard/>
+<!--    <CategoryCard/>-->
     <Swiper/>
     <Footer/>
   </div>

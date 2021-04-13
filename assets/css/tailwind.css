@@ -51,3 +51,10 @@
     left: 7px;
     background: #107D6A;
 }
+body{
+   background: #F8F8F8;
+}
+.swiper-pagination-progressbar .swiper-pagination-progressbar-fill{
+    background: rgb(36, 131, 50) !important;
+    border-radius: 10px;
+}

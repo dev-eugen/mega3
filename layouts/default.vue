@@ -2,16 +2,6 @@
   <div>
     <hero :rootNames="rootNames" ></hero> 
     <Nuxt />
-    <Card 
-    :rating="rating" 
-    @changeRating="changeRating" 
-    crd-text="Versus" 
-    cln-text="Spring Colection"
-    drs-text="Evening Dress"
-    prc-text="250$"
-    />
-<!--    <CategoryCard/>-->
-    <Swiper/>
     <Footer/>
   </div>
 </template>
@@ -21,10 +11,7 @@ import useCategories from "@/api/useCategories"
 export default defineComponent({
   components: {
     Hero: () => import("@/components/Sections/Hero"),
-    Footer: () => import("@/components/Sections/Footer"),
-    Card: () => import("@/components/ProductCard"),
-    CategoryCard: () => import("@/components/CategoryCard"),
-    Swiper: () => import("@/components/Swiper")
+    Footer: () => import("@/components/Sections/Footer")
   },
   setup(props) {
     const rating = ssrRef(2)

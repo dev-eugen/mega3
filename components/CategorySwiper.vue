@@ -4,14 +4,8 @@
       <h5 class="text-green-dark text-3xl font-bold text-center uppercase mt-4 mb-10">auto</h5>
 
       <swiper class="swiper pb-4" :options="swiperOption">
-        <swiper-slide><CategoryCard/></swiper-slide>
-        <swiper-slide><CategoryCard/></swiper-slide>
-        <swiper-slide><CategoryCard/></swiper-slide>
-        <swiper-slide><CategoryCard/></swiper-slide>
-        <swiper-slide><CategoryCard/></swiper-slide>
-        <swiper-slide><CategoryCard/></swiper-slide>
+        <swiper-slide v-for="(category, i) in categories" :key="i"><CategoryCard :text="category.text" :img="category.img" /></swiper-slide>
         <div class="swiper-pagination" slot="pagination"></div>
-
       </swiper>
       <div class="swiper-button-prevs swiper-button-prev" slot="button-prev"></div>
       <div class="swiper-button-nexts swiper-button-next" slot="button-next"></div>
@@ -33,8 +27,33 @@ export default defineComponent({
     SwiperSlide,
     CategoryCard: () => import("@/components/CategoryCard")
   },
+  props: {
+    categories: {
+      type: Array,
+      require: true 
+    },
+  },
   data() {
     return {
+      // categories: [
+      //   {
+      //     img:'img/slider_catalog_icon2.svg',
+      //     text: 'text'
+      //   },
+      //   {
+      //     img:'img/slider_catalog_icon2.svg',
+      //     text: 'text'
+      //   },
+      //   {
+      //     img:'img/slider_catalog_icon2.svg',
+      //     text: 'text'
+      //   },
+      //   {
+      //     img:'img/slider_catalog_icon2.svg',
+      //     text: 'text'
+      //   }
+      // ],
+
       swiperOption: {
         slidesPerView: 4,
         pagination: {

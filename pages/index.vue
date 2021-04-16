@@ -1,5 +1,6 @@
 <template>
   <div>
+    <TitleMainPage/>
     <CategorySwiper/>
   </div>
 </template>
@@ -9,7 +10,8 @@
 export default {
   layout: 'default',
   components: {
-    CategorySwiper: () => import("@/components/CategorySwiper")
+    CategorySwiper: () => import("@/components/CategorySwiper"),
+    TitleMainPage: () => import("@/components/TitleMainPage")
   },
 };
 </script>

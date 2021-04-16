@@ -47,11 +47,6 @@ export default {
     baseURL: "https://api.mega3.uk/v1/",
   },
 
-  server: {
-    port: 8080,
-    host: "127.0.0.1",
-    timing: false,
-  },
 
   // Build Configuration (https://go.nuxtjs.dev/config-build)
   build: {},
